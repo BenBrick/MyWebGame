@@ -1,10 +1,15 @@
 import * as THREE from "three";
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene(); // creates a scene
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); //craetes a camera and sets the FOV, Aspect Ratio, Near Clipping Plane, Far Clipping Plane
 const listener = new THREE.AudioListener();
 camera.add( listener );
 const sound = new THREE.Audio( listener );
+const controls = new OrbitControls( camera, renderer.domElement );
+
+camera.position.set( 0, 20, 100 );
+controls.update();
 
 const renderer = new THREE.WebGLRenderer(); // craetes a renderer
 renderer.setSize(window.innerWidth, window.innerHeight); // sets the size of the renderer
@@ -63,6 +68,7 @@ function animate() {
   sphere.rotation.x += 0.05; 
   sphere.rotation.y += 0.02; 
 
+  controls.update();
   renderer.render(scene, camera); //renders the scene and camera
 }
 
