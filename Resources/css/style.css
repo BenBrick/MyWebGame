@@ -1,0 +1,11 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  padding: 3px;
+  width: 30%;
+}
+
+body{text-align: center;}

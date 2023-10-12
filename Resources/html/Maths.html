@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Maths Page</title>
+  <link href="./Resources/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Maths</h1>
+  <a href="game.html">Game play </a>
+  <br>
+  <a href="index.html">Home </a>
+  <br>
+  <a href="login.html">Login </a>
+
+  <script src="./Resources/js/script.js"></script>
+
+  <script>
+    const inputs = (num1, num2) => {
+      num1 = prompt("Enter a number: ")
+      num2 = prompt("Enter a second number: ")
+      let checking = check(num1, num2);
+      return checking
+    }
+
+    const check = (num1, num2) => {
+      if (num1 == num2) {
+        console.log("Mathcing numbers")
+        return num1, num2
+      }
+      else {
+        console.log("Try again")
+        inputs(num1, num2)
+      }
+    }
+
+    const getName = (name) => {
+      return name = prompt("Enter your name: ")
+    }
+
+    const hashCode = (str) => {          //https://stackoverflow.com/questions/6122571/simple-non-secure-hash-function-for-javascript
+      let hash = 0;
+      for (let i = 0, len = str.length; i < len; i++) {
+        let chr = str.charCodeAt(i);
+        hash = (hash << 5) - hash + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    }
+
+    let name = ""
+    name = getName(name)
+    name = hashCode(name)
+    console.log("Name hashed is: " + name)
+
+    let num1 = 0
+    let num2 = 0
+    let math = inputs(num1, num2)
+    console.log(math)
+  </script>
+
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
