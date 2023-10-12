@@ -13,7 +13,7 @@ const geometry = new THREE.BoxGeometry(1, 1, 1); //size
 const material = new THREE.MeshStandardMaterial({ color: 0x0000ff }); //colour
 const cube = new THREE.Mesh(geometry, material); //combines the geometry and material
 scene.add(cube); //adds the cube to the scene
-const light = new THREE.AmbientLight( 0xfdfeff,1 ); // creates a soft white light
+const light = new THREE.AmbientLight({color:0xfdfeff, intensity:1 }); // creates a soft white light
 scene.add(light);
 
 camera.position.z = 5; //sets the camera position
